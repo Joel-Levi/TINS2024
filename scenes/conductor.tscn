@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfvkfnw11pt6k"]
+
+[ext_resource type="Script" path="res://scripts/conductorController.gd" id="1_t7uf8"]
+
+[node name="Conductor" type="Node2D"]
+script = ExtResource("1_t7uf8")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1149.0
+offset_bottom = 645.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(1150, 645)
+layout_mode = 2
+color = Color(0, 0.6, 0, 0.984314)
+
+[node name="DebugLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Conductor"

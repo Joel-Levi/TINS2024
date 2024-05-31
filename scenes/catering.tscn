@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt4y7sm4rxpwh"]
+
+[ext_resource type="Script" path="res://scripts/cateringController.gd" id="1_s1dk2"]
+
+[node name="Catering" type="Node2D"]
+script = ExtResource("1_s1dk2")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(1150, 645)
+offset_right = 1151.0
+offset_bottom = 529.0
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(1150, 645)
+layout_mode = 2
+color = Color(0.690196, 0.298039, 0, 1)
+
+[node name="DebugLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Catering
+"

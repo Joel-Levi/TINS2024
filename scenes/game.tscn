@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://1hsrpv4kbw1g"]
+
+[ext_resource type="PackedScene" uid="uid://cfvkfnw11pt6k" path="res://scenes/conductor.tscn" id="1_tvsq8"]
+[ext_resource type="PackedScene" uid="uid://bp2n881o8icdt" path="res://scenes/coal.tscn" id="2_c7oq0"]
+[ext_resource type="Script" path="res://scripts/gameController.gd" id="3_05cfm"]
+[ext_resource type="PackedScene" uid="uid://djyx3h70ucgm1" path="res://scenes/tickets.tscn" id="4_jpjt3"]
+[ext_resource type="PackedScene" uid="uid://dt4y7sm4rxpwh" path="res://scenes/catering.tscn" id="5_7eua5"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+offset = Vector2(-64, 187.33)
+
+[node name="Conductor" parent="." groups=["games"] instance=ExtResource("1_tvsq8")]
+position = Vector2(-84, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="Coal" parent="." groups=["games"] instance=ExtResource("2_c7oq0")]
+position = Vector2(768, 256)
+scale = Vector2(4, 4)
+
+[node name="GameController" type="Node" parent="."]
+script = ExtResource("3_05cfm")
+
+[node name="Tickets" parent="." groups=["games"] instance=ExtResource("4_jpjt3")]
+position = Vector2(768, 768)
+scale = Vector2(4, 4)
+
+[node name="Catering" parent="." groups=["games"] instance=ExtResource("5_7eua5")]
+position = Vector2(-81, 576)
+scale = Vector2(0.5, 0.5)
