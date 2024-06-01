@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/cateringController.gd" id="1_s1dk2"]
 [ext_resource type="Texture2D" uid="uid://bfvx7ikb1dpki" path="res://assets/restaurant/SB Restaurant.png" id="2_71xw6"]
-[ext_resource type="Texture2D" uid="uid://br1obb7rdly8q" path="res://assets/restaurant/BG Restaurant.png" id="2_hsfph"]
+[ext_resource type="Texture2D" uid="uid://drm2riqk8x2jf" path="res://assets/restaurant/BG Restaurant (1).png" id="3_6tuxl"]
 [ext_resource type="Texture2D" uid="uid://bfv1384dixnqs" path="res://assets/restaurant/Trolley.png" id="4_qgf6q"]
 [ext_resource type="Texture2D" uid="uid://csc2t5q5evg0c" path="res://assets/restaurant/BG Restaurant BALK.png" id="5_6wrpo"]
 
@@ -90,14 +90,14 @@ z_index = 1
 z_as_relative = false
 position = Vector2(64, 64)
 scale = Vector2(2, 2)
-texture = ExtResource("2_hsfph")
+texture = ExtResource("3_6tuxl")
 
 [node name="floor2" type="Sprite2D" parent="Control/floor"]
 z_index = 1
 z_as_relative = false
 position = Vector2(64, -64)
 scale = Vector2(2, 2)
-texture = ExtResource("2_hsfph")
+texture = ExtResource("3_6tuxl")
 
 [node name="BgRestaurantBalk2" type="Sprite2D" parent="Control/floor"]
 z_index = 3

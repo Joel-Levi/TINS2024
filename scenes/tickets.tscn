@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://djyx3h70ucgm1"]
+[gd_scene load_steps=6 format=3 uid="uid://djyx3h70ucgm1"]
 
 [ext_resource type="Script" path="res://scripts/ticketController.gd" id="1_33vwe"]
+[ext_resource type="Texture2D" uid="uid://ck1qp8rxa4iut" path="res://assets/tickets/SB POV.png" id="2_6m6p4"]
 [ext_resource type="Texture2D" uid="uid://ciadh27y6jovo" path="res://assets/tickets/BG Ticket.png" id="2_6wmmf"]
 [ext_resource type="Texture2D" uid="uid://docw8837vkbte" path="res://assets/tickets/wrong.png" id="3_4s3l4"]
 
@@ -22,6 +23,11 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_6m6p4")
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 custom_minimum_size = Vector2(128, 128)

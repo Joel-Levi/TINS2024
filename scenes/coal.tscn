@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp2n881o8icdt"]
+[gd_scene load_steps=8 format=3 uid="uid://bp2n881o8icdt"]
 
 [ext_resource type="Script" path="res://scripts/coalController.gd" id="1_c3ekm"]
 [ext_resource type="Texture2D" uid="uid://c3fbcoiroiwvp" path="res://assets/coal/character.png" id="2_5xd0i"]
-[ext_resource type="Texture2D" uid="uid://bi7tiqyt64xwu" path="res://assets/coal/BG Coal.png" id="2_ofvbl"]
+[ext_resource type="Texture2D" uid="uid://cho2n81ga3ulw" path="res://assets/coal/BG Coal 2.png" id="2_8xx7w"]
+[ext_resource type="Texture2D" uid="uid://cts5fgas3at4" path="res://assets/coal/SB Coal Clouds.png" id="2_blxvd"]
+[ext_resource type="Texture2D" uid="uid://ri2q3vpr2cah" path="res://assets/coal/SB Coal Bushes.png" id="3_yiqp6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qdow0"]
 atlas = ExtResource("2_5xd0i")
@@ -30,6 +32,46 @@ offset_bottom = 22.01
 theme_override_font_sizes/font_size = 32
 text = "Coal"
 
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Clouds" type="Node2D" parent="Control"]
+position = Vector2(64, 64)
+
+[node name="SbCoalClouds2" type="Sprite2D" parent="Control/Clouds"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_blxvd")
+
+[node name="SbCoalClouds" type="Sprite2D" parent="Control/Clouds"]
+position = Vector2(-128, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_blxvd")
+
+[node name="Bushes" type="Node2D" parent="Control"]
+position = Vector2(64, 64)
+
+[node name="SbCoalBushes2" type="Sprite2D" parent="Control/Bushes"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_yiqp6")
+
+[node name="SbCoalBushes" type="Sprite2D" parent="Control/Bushes"]
+position = Vector2(-128, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("3_yiqp6")
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(128, 128)
 anchors_preset = 8
@@ -47,7 +89,7 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("2_ofvbl")
+texture = ExtResource("2_8xx7w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(17, 29)
