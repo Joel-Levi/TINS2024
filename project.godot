@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1024
 window/size/viewport_height=1024
 
+[gui]
+
+theme/custom_font="res://assets/tiny-3x5 (1).ttf"
+theme/default_font_antialiasing=0
+
 [input]
 
 right={

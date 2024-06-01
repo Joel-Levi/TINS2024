@@ -1,8 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn1o44jjg0qu4"]
+[gd_scene load_steps=12 format=3 uid="uid://dn1o44jjg0qu4"]
 
 [ext_resource type="Script" path="res://scenes/ticket.gd" id="1_j7vro"]
 [ext_resource type="Texture2D" uid="uid://cyqh7y7jqbv7w" path="res://assets/tickets/Ticket Naakt.png" id="2_s4pw8"]
+[ext_resource type="Texture2D" uid="uid://senopwayeqj3" path="res://assets/tickets/Hand 1_2.png" id="2_vcdxh"]
 [ext_resource type="FontFile" uid="uid://cs2hqx77swvqd" path="res://assets/tiny-3x5 (1).ttf" id="3_kjo2i"]
+[ext_resource type="Texture2D" uid="uid://tw2xctg5xd1t" path="res://assets/tickets/Hand 2_2.png" id="5_l38oi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm3th"]
+atlas = ExtResource("2_vcdxh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ob4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm3th")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3u6e"]
 atlas = ExtResource("2_s4pw8")
@@ -19,10 +36,31 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0qjx"]
+atlas = ExtResource("5_l38oi")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0lqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0qjx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Ticket" type="Node2D"]
 script = ExtResource("1_j7vro")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="hand" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, 8)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5ob4u")
+
+[node name="ticket" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_gxgao")
 
 [node name="Label" type="Label" parent="."]
@@ -32,14 +70,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -19.0
-offset_top = -16.0
+offset_top = -22.36
 offset_right = 21.0
-offset_bottom = 7.0
+offset_bottom = 0.639999
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.368627, 0.305882, 0.176471, 1)
 theme_override_fonts/font = ExtResource("3_kjo2i")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "10-05"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -50,15 +88,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = -8.0
-offset_right = 23.0
-offset_bottom = 15.0
+offset_left = -19.0
+offset_top = -5.0
+offset_right = 21.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.368627, 0.305882, 0.176471, 1)
 theme_override_fonts/font = ExtResource("3_kjo2i")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 16
 text = "1903"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="thumb" type="AnimatedSprite2D" parent="."]
+position = Vector2(13, 8)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_j0lqg")

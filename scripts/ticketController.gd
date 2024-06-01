@@ -10,11 +10,13 @@ var currentTicket
 var newTicketTime = 5
 var currentTicketTime = 0
 var rng
+var noise
 
-@onready var debug_label = $CenterContainer/DebugLabel
+@onready var debug_label = $DebugLabel
 
 func _ready():
 	rng = RandomNumberGenerator.new()
+	noise = FastNoiseLite.new()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -32,7 +34,14 @@ func _process(delta):
 
 	if currentTicket == null:
 		generate_ticket(tickets[0])
-
+	else:
+		if rng.randi_range(0,5) == 1:
+			currentTicket.position.x = 0
+			currentTicket.position.x = sway(currentTicket.position.x)
+		if rng.randi_range(0,10) == 1:
+			currentTicket.position.y = 0
+			currentTicket.position.y = sway(currentTicket.position.y)
+	
 	debug_label.text = str(tickets.size())
 
 	if !active: 
@@ -68,5 +77,17 @@ func generate_ticket(valid):
 	add_child(ticket)
 	ticket.set_label_text(str(valid))
 	ticket.position.x = 0
-	ticket.position.y = 40
+	ticket.position.y = 15
 	currentTicket = ticket
+	
+	
+
+var sway_magnitude = 3
+var sway_timer = 0
+var sway_period = 20
+	
+func sway(start):
+	var displacement = sway_magnitude * sin(sway_timer / rng.randf_range(sway_period, 20))
+	var v = start + displacement
+	sway_timer += 1
+	return v

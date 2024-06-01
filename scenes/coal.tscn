@@ -23,11 +23,11 @@ animations = [{
 script = ExtResource("1_c3ekm")
 
 [node name="DebugLabel" type="Label" parent="."]
-offset_left = -14.255
-offset_top = -60.99
-offset_right = 91.745
-offset_bottom = 8.01
-theme_override_font_sizes/font_size = 50
+offset_left = -10.255
+offset_top = -46.99
+offset_right = 95.745
+offset_bottom = 22.01
+theme_override_font_sizes/font_size = 32
 text = "Coal"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]

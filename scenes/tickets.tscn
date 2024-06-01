@@ -1,21 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://djyx3h70ucgm1"]
+[gd_scene load_steps=3 format=3 uid="uid://djyx3h70ucgm1"]
 
 [ext_resource type="Script" path="res://scripts/ticketController.gd" id="1_33vwe"]
+[ext_resource type="Texture2D" uid="uid://ciadh27y6jovo" path="res://assets/tickets/BG Ticket.png" id="2_6wmmf"]
 
 [node name="Tickets" type="Node2D"]
 script = ExtResource("1_33vwe")
 
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -48.5
+offset_top = -22.5
+offset_right = 47.5
+offset_bottom = 21.5
+theme_override_font_sizes/font_size = 32
+text = "Tickets"
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(1150, 645)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -575.5
-offset_top = -322.5
-offset_right = 575.5
-offset_bottom = 322.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -24,10 +32,10 @@ custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 color = Color(0.47451, 0.301961, 1, 1)
 
-[node name="DebugLabel" type="Label" parent="CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Tickets"
+texture = ExtResource("2_6wmmf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5.12, 5.12)
+zoom = Vector2(8, 8)

@@ -2,7 +2,7 @@ extends Node
 @onready var conductor = $"../Conductor"
 @onready var coal = $"../Coal"
 
-const games = [ 'coal', 'conductor', 'catering', 'tickets' ]
+const games = [ 'coal', 'driver', 'catering', 'tickets' ]
 var currentGame = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready():
