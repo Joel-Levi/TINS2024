@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfvkfnw11pt6k"]
+[gd_scene load_steps=4 format=3 uid="uid://cfvkfnw11pt6k"]
 
 [ext_resource type="Script" path="res://scripts/driverController.gd" id="1_t7uf8"]
+[ext_resource type="Texture2D" uid="uid://ddhpbmpp2hwas" path="res://assets/driver/BG Driver.png" id="2_agxd4"]
+[ext_resource type="Texture2D" uid="uid://lpp3c7hhi4ki" path="res://assets/driver/Driver Shaft.png" id="3_yfeij"]
 
 [node name="Driver" type="Node2D"]
 script = ExtResource("1_t7uf8")
@@ -20,14 +22,34 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect" type="ColorRect" parent="CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-color = Color(0, 0.6, 0, 0.984314)
+texture = ExtResource("2_agxd4")
 
 [node name="DebugLabel" type="Label" parent="."]
-offset_left = -31.0
-offset_top = -41.0
-offset_right = 225.0
-offset_bottom = 28.0
-text = "Conductor"
+offset_left = -27.0
+offset_top = -14.0
+offset_right = 1.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 16
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
+
+[node name="Shaft" type="Sprite2D" parent="."]
+position = Vector2(-3, 38)
+scale = Vector2(2, 2)
+texture = ExtResource("3_yfeij")
+centered = false
+offset = Vector2(-15.44, -28.835)
+
+[node name="TargetSpeed" type="Label" parent="."]
+offset_left = -4.0
+offset_top = -12.0
+offset_right = 36.0
+offset_bottom = 11.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

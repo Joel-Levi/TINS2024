@@ -1,12 +1,14 @@
 extends Node
 
+var grace = 5
+var current_grace = 0
 var burn_duration = 1
 var burn_multiplier = 1
 
 var active = false
 var shovelPos = 0
 
-var total = 2
+var total = 10000
 var current_burn_time = 0
 
 signal game_over
@@ -16,27 +18,26 @@ signal game_over
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	debug_label.text = str(total)
+	
+	if total <= 0:
+		current_grace += delta
+		if current_grace > grace:
+			game_over.emit()
+	else:
+		current_grace = 0
 	
 	current_burn_time += delta * burn_multiplier
 	
-	if current_burn_time > burn_duration:
+	if current_burn_time > burn_duration && total > 0:
 		current_burn_time = 0
 		total -= 1
-		
-	if total < 0:
-		game_over.emit()
-		active = false
 	
-	debug_label.text = str(total)
-	
-	if !active: 
-		return
-		
-	if Input.is_action_just_pressed('right'):
+	if Input.is_action_just_pressed('right') && active:
 		shovelPos = 1
 		character.flip_h = true
 		
-	if Input.is_action_just_pressed("left") && shovelPos == 1:
+	if Input.is_action_just_pressed("left") && shovelPos == 1 && active:
 		shovelPos = 0
 		character.flip_h = false
 		total += 1

@@ -1,18 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://djyx3h70ucgm1"]
+[gd_scene load_steps=5 format=3 uid="uid://djyx3h70ucgm1"]
 
 [ext_resource type="Script" path="res://scripts/ticketController.gd" id="1_33vwe"]
 [ext_resource type="Texture2D" uid="uid://ciadh27y6jovo" path="res://assets/tickets/BG Ticket.png" id="2_6wmmf"]
+[ext_resource type="Texture2D" uid="uid://docw8837vkbte" path="res://assets/tickets/wrong.png" id="3_4s3l4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uxfds"]
+load_path = "res://.godot/imported/check.png-444acfe712b86416bd86242275b9a83d.ctex"
 
 [node name="Tickets" type="Node2D"]
 script = ExtResource("1_33vwe")
-
-[node name="DebugLabel" type="Label" parent="."]
-offset_left = -48.5
-offset_top = -22.5
-offset_right = 47.5
-offset_bottom = 21.5
-theme_override_font_sizes/font_size = 32
-text = "Tickets"
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 8
@@ -27,11 +23,6 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CenterContainer"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 2
-color = Color(0.47451, 0.301961, 1, 1)
-
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
@@ -39,3 +30,15 @@ texture = ExtResource("2_6wmmf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(8, 8)
+
+[node name="checkmark" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -17)
+scale = Vector2(0.0777778, 0.0956457)
+texture = SubResource("CompressedTexture2D_uxfds")
+
+[node name="cross" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -17)
+scale = Vector2(0.100352, 0.100352)
+texture = ExtResource("3_4s3l4")

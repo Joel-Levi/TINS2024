@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://g6b7u1fsavgh"]
+
+[ext_resource type="Texture2D" uid="uid://cwglpdn44uec5" path="res://assets/restaurant/Food L.png" id="1_wbsv7"]
+
+[node name="Food1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+z_as_relative = false
+scale = Vector2(2, 2)
+texture = ExtResource("1_wbsv7")

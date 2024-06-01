@@ -8,6 +8,12 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_right = 1023.0
+offset_bottom = 1026.0
+color = Color(0.259177, 0.674661, 0.701664, 1)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 offset = Vector2(-64, 187.33)
@@ -28,7 +34,10 @@ position = Vector2(768, 768)
 scale = Vector2(4, 4)
 
 [node name="Catering" parent="." groups=["games"] instance=ExtResource("5_7eua5")]
-position = Vector2(-81, 576)
-scale = Vector2(0.5, 0.5)
+position = Vector2(256, 768)
+scale = Vector2(4, 4)
 
+[connection signal="game_over" from="Driver" to="GameController" method="_on_driver_game_over"]
 [connection signal="speed_changed" from="Driver" to="Coal" method="_on_driver_speed_changed"]
+[connection signal="speed_changed" from="Driver" to="Catering" method="_on_driver_speed_changed"]
+[connection signal="game_over" from="Coal" to="GameController" method="_on_coal_game_over"]
