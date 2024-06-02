@@ -13,6 +13,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
 offset_right = 1024.0
 offset_bottom = 1024.0
 texture = ExtResource("1_3m208")
@@ -52,19 +53,17 @@ alignment = 0
 
 [node name="Level 2" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
-disabled = true
 text = "LEVEL 2: LYON -> PARIS"
 alignment = 0
 
 [node name="Level 3" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
-disabled = true
 text = "LEVEL 3: LILLE -> MARSEILLE"
 alignment = 0
 
 [node name="Label" type="Label" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "MADE BY BANANALAZER & BAUKETOP"
+text = "MADE BY BLZR & BAUKETOP"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_h2yac")

@@ -71,18 +71,18 @@ stream = ExtResource("5_ph0ck")
 stream = ExtResource("6_ku64n")
 
 [node name="Bon2" type="Label" parent="."]
-offset_left = 26.0
+offset_left = 36.0
 offset_top = 44.0
-offset_right = 66.0
+offset_right = 76.0
 offset_bottom = 66.0
-text = "BON→"
+text = "BON"
 
 [node name="Non2" type="Label" parent="."]
 offset_left = -60.0
 offset_top = 44.0
 offset_right = -18.0
 offset_bottom = 66.0
-text = "← NON "
+text = "NON "
 
 [node name="date" type="Label" parent="."]
 offset_left = -61.0

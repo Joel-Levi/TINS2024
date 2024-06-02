@@ -2,41 +2,13 @@ extends Node
 
 signal level_complete
 signal game_over
+signal won
 
 const games = [ 'catering', 'driver', 'coal', 'tickets' ]
 var currentGame = 0;
-var level = {
-	'catering':[
-	[0,0],
-	[1,1],
-	[0,1],
-	[0,0],
-	[1,0],
-	[1,0],
-	[1,0],
-	[1,0],
-	[1,0],
-	[1,0],
-	[1,1],
-	[0,0],
-	[0,1],
-	[1,1],
-	[1,1],
-	[1,1],
-	[1,1],
-	[1,1],
-],
-	'target_speeds': [
-		[0, 0],
-		[10, 40],
-		[30, 80],
-		[50, 30],
-		[70, 100],
-		[80, 0],
-],
-	'tickets': [true,false,true,false,false,true,false]
-}
-
+var level
+func set_level(l):
+	level = l
 func get_level():
 	return level
 # Called when the node enters the scene tree for the first time.
@@ -80,6 +52,7 @@ func _on_driver_trip_done():
 		return
 		
 	reasonText = 'YOU WIN'
+	won.emit(level.level)
 	game_over_function()
 
 func game_over_function():

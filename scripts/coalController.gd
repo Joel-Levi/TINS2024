@@ -8,7 +8,7 @@ var speed = 0
 var active = false
 var shovelPos = 0
 
-var total = 10
+var total = 25
 var current_burn_time = 0
 
 signal game_over
