@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlscxpgfqqfmc"
+path="res://.godot/imported/Ambience Rest.mp3-feded6a41404e72df488746b1850cd46.mp3str"
+
+[deps]
+
+source_file="res://assets/restaurant/sounds/Ambience Rest.mp3"
+dest_files=["res://.godot/imported/Ambience Rest.mp3-feded6a41404e72df488746b1850cd46.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://dn1o44jjg0qu4"]
 
 [ext_resource type="Script" path="res://scripts/ticket.gd" id="1_sqbo6"]
-[ext_resource type="Texture2D" uid="uid://cyqh7y7jqbv7w" path="res://assets/tickets/Ticket Naakt.png" id="2_s4pw8"]
 [ext_resource type="Texture2D" uid="uid://senopwayeqj3" path="res://assets/tickets/Hand 1_2.png" id="2_vcdxh"]
 [ext_resource type="FontFile" uid="uid://cs2hqx77swvqd" path="res://assets/tiny-3x5 (1).ttf" id="3_kjo2i"]
+[ext_resource type="Texture2D" uid="uid://cyqh7y7jqbv7w" path="res://assets/tickets/Ticket Naakt.png" id="3_rcchj"]
 [ext_resource type="Texture2D" uid="uid://tw2xctg5xd1t" path="res://assets/tickets/Hand 2_2.png" id="5_l38oi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qm3th"]
@@ -21,19 +21,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w3u6e"]
-atlas = ExtResource("2_s4pw8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0lh3"]
+atlas = ExtResource("3_rcchj")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxgao"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w3u6e")
+"texture": SubResource("AtlasTexture_n0lh3")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 0.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i0qjx"]

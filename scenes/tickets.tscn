@@ -1,12 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://djyx3h70ucgm1"]
+[gd_scene load_steps=7 format=3 uid="uid://djyx3h70ucgm1"]
 
 [ext_resource type="Script" path="res://scripts/ticketController.gd" id="1_33vwe"]
 [ext_resource type="Texture2D" uid="uid://ck1qp8rxa4iut" path="res://assets/tickets/SB POV.png" id="2_6m6p4"]
-[ext_resource type="Texture2D" uid="uid://ciadh27y6jovo" path="res://assets/tickets/BG Ticket.png" id="2_6wmmf"]
-[ext_resource type="Texture2D" uid="uid://docw8837vkbte" path="res://assets/tickets/wrong.png" id="3_4s3l4"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uxfds"]
-load_path = "res://.godot/imported/check.png-444acfe712b86416bd86242275b9a83d.ctex"
+[ext_resource type="Texture2D" uid="uid://bwn7kjheu331w" path="res://assets/tickets/BG Ticket 2.png" id="3_wd8xw"]
+[ext_resource type="AudioStream" uid="uid://beligo1icioh5" path="res://assets/tickets/Bon.mp3" id="5_ph0ck"]
+[ext_resource type="AudioStream" uid="uid://blwj1shggepos" path="res://assets/tickets/Non.mp3" id="6_ku64n"]
+[ext_resource type="AudioStream" uid="uid://bio06i4u3iryn" path="res://assets/tickets/Zut.mp3" id="6_tdkto"]
 
 [node name="Tickets" type="Node2D"]
 script = ExtResource("1_33vwe")
@@ -32,19 +31,74 @@ texture = ExtResource("2_6m6p4")
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-texture = ExtResource("2_6wmmf")
+texture = ExtResource("3_wd8xw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(8, 8)
 
-[node name="checkmark" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(0, -17)
-scale = Vector2(0.0777778, 0.0956457)
-texture = SubResource("CompressedTexture2D_uxfds")
+[node name="TicketContainer" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="cross" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(0, -17)
-scale = Vector2(0.100352, 0.100352)
-texture = ExtResource("3_4s3l4")
+[node name="Done" type="Label" parent="."]
+visible = false
+offset_left = -65.0
+offset_top = -24.0
+offset_right = 64.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "All tickets 
+checked!"
+horizontal_alignment = 1
+
+[node name="Bon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ph0ck")
+
+[node name="Non" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ku64n")
+
+[node name="Bon2" type="Label" parent="."]
+offset_left = 26.0
+offset_top = 44.0
+offset_right = 66.0
+offset_bottom = 66.0
+text = "BON→"
+
+[node name="Non2" type="Label" parent="."]
+offset_left = -60.0
+offset_top = 44.0
+offset_right = -18.0
+offset_bottom = 66.0
+text = "← NON "
+
+[node name="date" type="Label" parent="."]
+offset_left = -61.0
+offset_top = 35.0
+offset_right = 64.0
+offset_bottom = 57.0
+text = "1-4"
+horizontal_alignment = 1
+
+[node name="lives" type="Label" parent="."]
+offset_left = -19.0
+offset_top = 45.0
+offset_right = 21.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.941176, 0, 0, 1)
+horizontal_alignment = 1
+
+[node name="Zut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_tdkto")

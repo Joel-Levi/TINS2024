@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vswqld0d1er1"
+path="res://.godot/imported/Interaction Rest 3.wav-e5dc7473125d18d81ef312cdc5260913.sample"
+
+[deps]
+
+source_file="res://assets/restaurant/sounds/Interaction Rest 3.wav"
+dest_files=["res://.godot/imported/Interaction Rest 3.wav-e5dc7473125d18d81ef312cdc5260913.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

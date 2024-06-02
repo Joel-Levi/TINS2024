@@ -2,20 +2,21 @@ extends Node
 
 signal speed_changed(newValue)
 signal game_over
+signal activated
+signal trip_done
 
-var active = false
+@onready var train = $Train
+
+var active = true
 var current_speed = 0
-var target_speeds = [
-	[0, 0],
-	[1000, 0],
-	[1001, 0],
-]
+var target_speeds
+var done = false
 
 var current_time = 0
 var current_target_speed = 0
 
 var invalid_timer = 0
-var invalid_timer_limit = 60
+var invalid_timer_limit = 8
 var range = 5
 
 var moving_timer = 0
@@ -26,12 +27,18 @@ var speed_mod = 1
 @onready var target_label = $TargetSpeed
 
 func _ready():
+	var game = get_parent()
+	target_speeds = game.get_level().target_speeds
+	
 	current_target_speed = target_speeds[0][1]
 	target_speeds.pop_front()
 	target_label.text = str(current_target_speed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if done:
+		return
+	
 	debug_label.text = str(current_speed)
 	
 	shaft.rotation = remap(current_speed, 0, 100, -.75, .75)
@@ -42,6 +49,9 @@ func _process(delta):
 		current_target_speed = target_speeds[0][1]
 		target_speeds.pop_front()
 		target_label.text = str(current_target_speed)
+		if target_speeds.size() == 0:
+			trip_done.emit()
+			done = true
 	
 	var current_diff =  (current_speed - current_target_speed)
 	
@@ -80,10 +90,15 @@ func _process(delta):
 	
 	#if current_speed % 10:
 	speed_changed.emit(current_speed)
+	
+	if current_speed == 0:
+		train.stop()
+	if current_speed != 0 && !train.playing:
+		train.play()
+		
+	train.pitch_scale = remap(float(current_speed),0.0,100.0,1.0,2.0)
 
 func enable_game(n):
 	active = n == 'driver'
 	if active: 
-		debug_label.add_theme_color_override("font_color", Color(1.0,0.0,0.0,1.0))
-	else:
-		debug_label.add_theme_color_override("font_color", Color(1.0,1.0,1.0,1.0))
+		activated.emit(self.position)

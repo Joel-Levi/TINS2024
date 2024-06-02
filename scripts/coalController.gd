@@ -8,18 +8,24 @@ var speed = 0
 var active = false
 var shovelPos = 0
 
-var total = 10000
+var total = 10
 var current_burn_time = 0
 
 signal game_over
-
-@onready var debug_label = $DebugLabel
+signal activated
+@onready var warning = $warning
 @onready var character = $AnimatedSprite2D
 @onready var bg_cloud = $Control/Clouds
+@onready var fire = $Fire
 @onready var bg_bush = $Control/Bushes
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	debug_label.text = str(total)
+	warning.visible = total < 20
+	
+	if total > 0:
+		warning.text = 'LOW COAL'
+	else:
+		warning.text = 'NO COAL'
 	
 	if (bg_cloud.position.x + speed*0.015  > 127+64):
 		bg_cloud.position.x = 64
@@ -45,22 +51,26 @@ func _process(delta):
 		current_burn_time = 0
 		total -= 1
 	
-	if Input.is_action_just_pressed('right') && active:
+	if Input.is_action_just_pressed('right') && active && !character.is_playing():
 		shovelPos = 1
-		character.flip_h = true
+		character.play('right')
 		
-	if Input.is_action_just_pressed("left") && shovelPos == 1 && active:
+	if Input.is_action_just_pressed("left") && shovelPos == 1 && active && !character.is_playing():
 		shovelPos = 0
-		character.flip_h = false
-		total += 1
+		character.play('left')
+		total += 10
+
+	if fire.animation != 'empty' && total <= 10:
+		fire.play('empty')
+	if fire.animation != 'small' && total > 10 && total <= 40:
+		fire.play('small')
+	if fire.animation != 'big' && total > 40:
+		fire.play('big')
 
 func enable_game(n):
 	active = n == 'coal'
 	if active: 
-		debug_label.add_theme_color_override("font_color", Color(1.0,0.0,0.0,1.0))
-	else:
-		debug_label.add_theme_color_override("font_color", Color(1.0,1.0,1.0,1.0))
-
+		activated.emit(self.position)
 
 func _on_driver_speed_changed(newValue):
 	speed = newValue

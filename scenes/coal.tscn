@@ -1,36 +1,151 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp2n881o8icdt"]
+[gd_scene load_steps=25 format=3 uid="uid://bp2n881o8icdt"]
 
 [ext_resource type="Script" path="res://scripts/coalController.gd" id="1_c3ekm"]
-[ext_resource type="Texture2D" uid="uid://c3fbcoiroiwvp" path="res://assets/coal/character.png" id="2_5xd0i"]
 [ext_resource type="Texture2D" uid="uid://cho2n81ga3ulw" path="res://assets/coal/BG Coal 2.png" id="2_8xx7w"]
 [ext_resource type="Texture2D" uid="uid://cts5fgas3at4" path="res://assets/coal/SB Coal Clouds.png" id="2_blxvd"]
 [ext_resource type="Texture2D" uid="uid://ri2q3vpr2cah" path="res://assets/coal/SB Coal Bushes.png" id="3_yiqp6"]
+[ext_resource type="Texture2D" uid="uid://ebsdqo7155pu" path="res://assets/coal/Chauveline.png" id="5_rdgim"]
+[ext_resource type="Texture2D" uid="uid://bupkg7uuubgix" path="res://assets/coal/Vlam 2.png" id="6_hff61"]
+[ext_resource type="Texture2D" uid="uid://bh14pvv2gyqio" path="res://assets/coal/Vlam 1.png" id="6_q2tbh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qdow0"]
-atlas = ExtResource("2_5xd0i")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvvll"]
+atlas = ExtResource("5_rdgim")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpmff"]
+atlas = ExtResource("5_rdgim")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgerc"]
+atlas = ExtResource("5_rdgim")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugw1a"]
+atlas = ExtResource("5_rdgim")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntqhg"]
+atlas = ExtResource("5_rdgim")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kghd0"]
+atlas = ExtResource("5_rdgim")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_al6nq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qdow0")
+"texture": SubResource("AtlasTexture_xvvll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpmff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgerc")
+}],
+"loop": false,
+"name": &"left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugw1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntqhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kghd0")
+}],
+"loop": false,
+"name": &"right",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrgbr"]
+atlas = ExtResource("6_hff61")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6352"]
+atlas = ExtResource("6_hff61")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m04ml"]
+atlas = ExtResource("6_hff61")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii343"]
+atlas = ExtResource("6_hff61")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoyu7"]
+atlas = ExtResource("6_q2tbh")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gd6q"]
+atlas = ExtResource("6_q2tbh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcdcc"]
+atlas = ExtResource("6_q2tbh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5bgc"]
+atlas = ExtResource("6_q2tbh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jqt5"]
+atlas = ExtResource("6_q2tbh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cu7v4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrgbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6352")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m04ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii343")
 }],
 "loop": true,
-"name": &"default",
+"name": &"big",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoyu7")
+}],
+"loop": true,
+"name": &"empty",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gd6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcdcc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5bgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jqt5")
+}],
+"loop": true,
+"name": &"small",
+"speed": 7.0
 }]
 
 [node name="Coal" type="Node2D"]
 script = ExtResource("1_c3ekm")
-
-[node name="DebugLabel" type="Label" parent="."]
-offset_left = -10.255
-offset_top = -46.99
-offset_right = 95.745
-offset_bottom = 22.01
-theme_override_font_sizes/font_size = 32
-text = "Coal"
 
 [node name="Control" type="Control" parent="."]
 clip_contents = true
@@ -92,9 +207,24 @@ layout_mode = 2
 texture = ExtResource("2_8xx7w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(17, 29)
+position = Vector2(10, 29)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_al6nq")
+animation = &"right"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(8, 8)
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(-34, 39)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cu7v4")
+animation = &"empty"
+
+[node name="warning" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -38.0
+offset_right = 101.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.854902, 0, 0, 1)
+text = "LOW COAL"
