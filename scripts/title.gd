@@ -125,7 +125,7 @@ func won(level):
 
 func _on_level_1_pressed():
 	var g = game.instantiate()
-	g.level = level1
+	g.level = level1.duplicate(true)
 	controls.process_mode = Node.PROCESS_MODE_DISABLED
 	add_child(g)
 	g.game_over.connect(enableControls)
@@ -133,16 +133,18 @@ func _on_level_1_pressed():
 
 func _on_level_2_pressed():
 	var g = game.instantiate()
-	g.level=level2	
+	g.level = level2.duplicate(true)
 	controls.process_mode = Node.PROCESS_MODE_DISABLED
 	add_child(g)
 	g.game_over.connect(enableControls)
+	g.won.connect(won)
 	
 
 func _on_level_3_pressed():
 	var g = game.instantiate()
-	g.level=level3
+	g.level = level3.duplicate(true)
 	controls.process_mode = Node.PROCESS_MODE_DISABLED
 	add_child(g)
 	g.game_over.connect(enableControls)
+	g.won.connect(won)
 	
